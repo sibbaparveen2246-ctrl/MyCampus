@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center;font-family: Arial;display: flex; background :#aeffff;justify-content: center;align-items: center;">
+    <div style="text-align:center; width:400px;">
+
+    <h1 style="color: #1a202c; margin: 0 0 8px 0 ; font-size: 32px; font-weight: 800; text-align: center;">Update Student</h1>
+    
+
+    <form method="post">
+        {% csrf_token %}
+
+    <div style="margin-bottom: 18px;">
+        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Student ID</label>
+        <input type="id" name="id" placeholder="Enter Your ID" required>
+    </div>
+    
+     <button type="submit"  name='choose' value="Delete_ID"
+     style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;">Delete_ID</button><br><br>
+   
+     <button type="submit" name="choose" value="Delete_All" onclick="return confirm('Are you sure?')"
+     style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;">Delete_All</button><br><br>
+
+
+    
+
+    </form>
+
+    <p>{{ message }}</p>
+
+    {% if students %}
+    <table border="2" style="margin: auto ;">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone_No</th>
+            <th>Subject</th>
+            <th>Email</th>
+        </tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.phone_no }}</td>
+            <td>{{ s.subject }}</td>
+            <td>{{ s.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+       <div style="text-align: center;margin-top: 20px;">
+        <a href="{% url 'search' %}" style="color: #2d3748; text-decoration: none;font-size: 14px;font-weight: 600;"> Back to Search </a>
+    </div>
+
+    <div style="text-align: center;margin-top: 20px;">
+        <a href="{% url 'home' %}" style="color: #2d3748; text-decoration: none;font-size: 14px;font-weight: 600;"> Back to Home </a>
+    </div>
+
+</body>
+</html>

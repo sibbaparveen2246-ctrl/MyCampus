@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body style="text-align:center;font-family: Arial;display: flex; background :#aeffff;justify-content: center;align-items: center;">
+    <div style="text-align:center; width:400px;">
+
+    
+    <h1 style="color: #1a202c; margin: 0 0 8px 0 ; font-size: 32px; font-weight: 800; text-align: center;">Add Student</h1>
+    
+    
+
+    <form method="post">
+        {% csrf_token %}
+
+    <label for="">Student ID</label><br>
+    <input type="number" name="id" placeholder="Enter ID"><br><br>
+
+    <button type="submit"  name='choose' value="Search_ID"
+     style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;">Search_ID</button><br><br>
+   
+     <button type="submit" name="choose" value="Search_All" 
+     style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;">Search_All</button><br><br>
+
+
+
+    
+    </form>
+
+    <p>{{ message }}</p>
+
+    {% if student %}
+        <table border="2" style="margin:auto;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone_no</th>
+                <th>Subject</th>
+                <th>Email</th>
+            </tr>
+
+            {% for s in student %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.phone_no }}</td>
+                <td>{{ s.subject }}</td>
+                <td>{{ s.email }}</td>
+            </tr>
+            {% endfor %}
+        
+        </table>
+    {% endif %}
+
+    <br><br>
+    <a href="{% url 'home' %}">Back to Home</a><br><br>
+
+
+</body>
+</html>
