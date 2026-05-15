@@ -20,35 +20,38 @@
     <form method="post">
         {% csrf_token %}
 
-
-    <div style="margin-bottom: 18px;">
-        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Student ID</label>
+     <div style="margin-bottom: 18px;">
+        <label>Student ID</label>
         <input type="number" name="id" placeholder="Enter Your ID" required>
     </div>
 
-    <div style="margin-bottom: 18px;">
-        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Name</label>
+
+     <div style="margin-bottom: 18px;">
+        <label>Name</label>
         <input type="text" name="name" placeholder="Enter Your Name" required>
     </div>
+    
 
-    <div style="margin-bottom: 18px;">
-        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Phone_No</label>
-        <input type="number" name="phone_no" placeholder="Enter Phone_no" required>
-    </div>
-
-    <div style="margin-bottom: 18px;">
-        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Subject</label>
-        <input type="text" name="subject" placeholder="Enter Your Subject" required>
+     <div style="margin-bottom: 18px;">
+        <label>Phone_no</label>
+        <input type="number" name="phone_no" placeholder="Enter Your Phone_No" required>
     </div>
 
    
 
-    <div style="margin-bottom: 18px;">
-        <label style="display: block; color: #2d3748; font-size: 14px; font-weight: 600;margin-bottom: 6px;">Email</label>
+     <div style="margin-bottom: 18px;">
+        <label>Subject</label>
+        <input type="text" name="Subject" placeholder="Enter Your Subject" required>
+    </div>
+    
+   
+
+     <div style="margin-bottom: 18px;">
+        <label>Email</label>
         <input type="email" name="email" placeholder="Enter Your Email" required>
     </div>
      
-     <button type="submit" style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;"> Update Student</button><br><br>
+    <button type="submit" style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;"> Update Student</button><br><br>
      
 
     </form>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial;display: flex; background :#aeffff;justify-content: center;align-items: center;">
+
+    <div style="text-align:center; width:400px;">
+    <h1 style="color: #1a202c; margin: 0 0 8px 0 ; font-size: 32px; font-weight: 800; text-align: center;">SIGN UP</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+       <div style="margin-bottom: 18px;">
+        <label > Username:</label> 
+        <input type="text" name="username" placeholder="Enter Your username"><br><br>
+    </div>
+
+    <div style="margin-bottom: 18px;">
+        <label > Password:</label> 
+        <input type="password" name="password" placeholder="Enter Your Password"><br><br>
+    </div>
+
+    <button type="submit" style="width:150px; background:#ffb6c1; padding: 8px;cursor: pointer;">Signup</button><br><br>
+
+
+    </form>
+
+    <p>{{ error }}</p>
+
+    <div style="text-align: center;margin-top: 20px;">
+        <a href="/login/" style="color: #2d3748; text-decoration: none;font-size: 14px;font-weight: 600;">Login </a>
+    </div>
+
+    
+</body>
+</html>

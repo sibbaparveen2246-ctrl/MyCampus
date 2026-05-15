@@ -1,6 +1,8 @@
 from django.shortcuts import render , redirect
 from django.contrib import messages
-from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 from .models import Student
 
 # Create your views here.
@@ -123,3 +125,48 @@ def delete_student(request):
             message = "All Student Deleted!"
 
     return render(request,'Studyportal_App/delete.html',{'students':students, 'message':message})
+
+# -------------------------------------------------------------
+# signup
+
+def user_signup(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']    
+        password = request.POST['password']  
+
+        if User.objects.filter(username=username).exists():
+            return render(request,'Studyportal_App/signup.html',{'error':'User Already Exists'}) 
+
+        User.objects.create_user(username=username, password=password)
+        return redirect('login')
+
+    return render(request,'Studyportal_App/signup.html')
+
+# -------------------------------------------------------------------
+# login in
+
+def user_login(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request,user)
+            return redirect('home')
+
+        else:
+            return render(request,'Studyportal_App/login.html',{'error':'Invalid Username and password'})
+
+    return render(request,'Studyportal_App/login.html')
+
+# -----------------------------------------------------------------
+# log out
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+

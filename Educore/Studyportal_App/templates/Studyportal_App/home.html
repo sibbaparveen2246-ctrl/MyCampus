@@ -6,20 +6,27 @@
     <title>MY Campus</title>
 </head>
 <body style="text-align: center;font-family: Arial;background-color: burlywood;">
-    <div style="width: 350px; margin: 100px auto;">
     
-    <h1 style="text-align: center; color: #2d3748;margin-bottom: 40px; font-size: 36px;font-weight: 700;"> MY CAMPUS </h1>
+    
+    <h1 style="text-align: center; color: #2d3748;margin-bottom: 40px; font-size: 36px;"> MY CAMPUS </h1>
 
-    <a href="{% url 'add' %}" style="text-decoration: none;"> <button type="submit" style="width: 100%;padding: 14px;margin: 10px 0;background: #48bb78;color: white;border: none;border-radius: 8px; font-size: 16px;font-weight: 600;cursor: pointer; ">Add</button></a><br><br>
+    
+    <a href="{% url 'add' %}"> <button type="submit" style="width: 160px;padding: 14px;margin: 10px 0;cursor: pointer; background-color: cornsilk;">Add</button></a><br><br>
+    
+    <a href="{% url 'search' %}"> <button type="submit" style="width: 160px;padding: 14px;margin: 10px 0;cursor: pointer;background-color: cornsilk; ">Search</button></a><br><br>
+    
+    <a href="{% url 'update' %}"> <button type="submit" style="width: 160px;padding: 14px;margin: 10px 0;cursor: pointer;background-color: cornsilk; ">Update</button></a><br><br>
+    
+    <a href="{% url 'delete' %}"> <button type="submit" style="width: 160px;padding: 14px;margin: 10px 0;cursor: pointer; background-color: cornsilk;">Delete</button></a><br><br>
 
-    <a href="{% url 'search' %}" style="text-decoration: none;"> <button type="submit" style="width: 100%;padding: 14px;margin: 10px 0;background: #4299e1;color: white;border: none;border-radius: 8px; font-size: 16px;font-weight: 600;cursor: pointer; ">Search</button></a><br><br>
-    <a href="{% url 'update' %}" style="text-decoration: none;"> <button type="submit" style="width: 100%;padding: 14px;margin: 10px 0;background: #ed8936;color: white;border: none;border-radius: 8px; font-size: 16px;font-weight: 600;cursor: pointer; ">Update</button></a><br><br>
+    
 
-    <a href="{% url 'delete' %}" style="text-decoration: none;"> <button type="submit" style="width: 100%;padding: 14px;margin: 10px 0;background: #f56565;color: white;border: none;border-radius: 8px; font-size: 16px;font-weight: 600;cursor: pointer; ">Delete</button></a><br><br>
-
-    </div>
+    
+    
    
+    <a href="/logout/">Logout</a>
 
+    <p>Logged in as {{ request.user.username }}</p> 
     
 </body>
 </html>
