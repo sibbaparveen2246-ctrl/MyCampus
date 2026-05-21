@@ -1,4 +1,4 @@
-# MyCampus - Django Student Management System
+# MyCampus - Campus Management System
 
 ### Features:
 - Student ADD/UPDATE/DELETE/SEARCH
